@@ -1,0 +1,39 @@
+/* Seif & Malak — Color tokens
+   Sampled from the ivory + gold botanical wedding invitation. */
+:root {
+  /* Base — warm ivory paper */
+  --paper-0: #f5efe3;   /* lightest highlight on the card */
+  --paper-1: #f0e8da;   /* primary card surface */
+  --paper-2: #eae0cf;   /* recessed / border shadow tone */
+  --paper-3: #e2d6c0;   /* deepest paper shade */
+
+  /* Gold — the foil/ink used for the couple's names */
+  --gold-1: #c2a566;    /* light gold highlight */
+  --gold-2: #a98a4f;    /* primary gold */
+  --gold-3: #8f7238;    /* deep gold / pressed */
+
+  /* Ink — warm charcoal-brown used for body copy */
+  --ink-1: #453f35;     /* primary text */
+  --ink-2: #6b6152;     /* secondary / labels */
+  --ink-3: #948a78;     /* muted / captions */
+
+  /* Line work */
+  --line-1: #cbbda0;    /* hairline borders / dividers */
+  --line-2: #b7a684;    /* stronger rule */
+
+  /* Semantic aliases */
+  --bg-page: var(--paper-2);
+  --surface-card: var(--paper-1);
+  --surface-raised: var(--paper-0);
+
+  --text-heading: var(--gold-2);
+  --text-body: var(--ink-1);
+  --text-muted: var(--ink-2);
+  --text-caption: var(--ink-3);
+
+  --accent: var(--gold-2);
+  --accent-strong: var(--gold-3);
+
+  --border-hairline: var(--line-1);
+  --border-frame: var(--line-2);
+}

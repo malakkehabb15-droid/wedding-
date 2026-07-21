@@ -1,0 +1,244 @@
+{
+  "plugins": [
+    "react",
+    "import"
+  ],
+  "rules": {
+    "react/forbid-elements": [
+      "warn",
+      {
+        "forbid": []
+      }
+    ],
+    "no-restricted-imports": [
+      "warn",
+      {
+        "patterns": [
+          {
+            "group": [
+              "components/invitation/**",
+              "ui_kits/invitation/**"
+            ],
+            "message": "Import design-system components from 'index.js', not component internals."
+          }
+        ]
+      }
+    ],
+    "no-restricted-syntax": [
+      "warn",
+      {
+        "selector": "Literal[value=/#[0-9a-fA-F]{3,8}\\b/]",
+        "message": "Raw hex color — use a design-system color token via var()."
+      },
+      {
+        "selector": "Literal[value=/\\b\\d+px\\b/]",
+        "message": "Raw px value — use a design-system spacing token via var()."
+      },
+      {
+        "selector": "Literal[value=/font-family\\s*:\\s*(?!['\\\"]?(?:Bodoni Moda|Parisienne))/i]",
+        "message": "Font not provided by the design system. Available: Bodoni Moda, Parisienne."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Botanical'] > JSXAttribute > JSXIdentifier[name!=/^(?:variant|src|height|opacity|style|key|ref|className|style|children)$/]",
+        "message": "<Botanical> doesn't accept that prop. Declared props: variant, src, height, opacity, style."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Botanical'] > JSXAttribute[name.name='variant'] > Literal[value!=/^(?:sprig|ornament)$/]",
+        "message": "<Botanical> variant must be one of 'sprig' | 'ornament'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Countdown'] > JSXAttribute > JSXIdentifier[name!=/^(?:month|day|target|label|style|key|ref|className|style|children)$/]",
+        "message": "<Countdown> doesn't accept that prop. Declared props: month, day, target, label, style."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='DateBlock'] > JSXAttribute > JSXIdentifier[name!=/^(?:weekday|month|day|year|style|key|ref|className|style|children)$/]",
+        "message": "<DateBlock> doesn't accept that prop. Declared props: weekday, month, day, year, style."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Divider'] > JSXAttribute > JSXIdentifier[name!=/^(?:ornament|width|style|key|ref|className|style|children)$/]",
+        "message": "<Divider> doesn't accept that prop. Declared props: ornament, width, style."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='FrameCard'] > JSXAttribute > JSXIdentifier[name!=/^(?:children|ratio|maxWidth|style|key|ref|className|style|children)$/]",
+        "message": "<FrameCard> doesn't accept that prop. Declared props: children, ratio, maxWidth, style."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='MapLink'] > JSXAttribute > JSXIdentifier[name!=/^(?:venue|city|href|style|key|ref|className|style|children)$/]",
+        "message": "<MapLink> doesn't accept that prop. Declared props: venue, city, href, style."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Monogram'] > JSXAttribute > JSXIdentifier[name!=/^(?:left|right|size|style|key|ref|className|style|children)$/]",
+        "message": "<Monogram> doesn't accept that prop. Declared props: left, right, size, style."
+      }
+    ]
+  },
+  "overrides": [
+    {
+      "files": [
+        "**/index.js"
+      ],
+      "rules": {
+        "no-restricted-imports": "off"
+      }
+    }
+  ],
+  "x-omelette": {
+    "components": {
+      "Botanical": {
+        "replaces": []
+      },
+      "Countdown": {
+        "replaces": []
+      },
+      "DateBlock": {
+        "replaces": []
+      },
+      "Divider": {
+        "replaces": []
+      },
+      "FrameCard": {
+        "replaces": []
+      },
+      "MapLink": {
+        "replaces": []
+      },
+      "Monogram": {
+        "replaces": []
+      }
+    },
+    "tokens": [
+      "--accent",
+      "--accent-strong",
+      "--bg-page",
+      "--border-frame",
+      "--border-hairline",
+      "--dur-med",
+      "--dur-slow",
+      "--ease-soft",
+      "--font-body",
+      "--font-display",
+      "--font-script",
+      "--frame-gap",
+      "--frame-inset",
+      "--fs-body",
+      "--fs-caption",
+      "--fs-display",
+      "--fs-label",
+      "--fs-lead",
+      "--fs-name",
+      "--fs-numeral",
+      "--fw-light",
+      "--fw-medium",
+      "--fw-regular",
+      "--fw-semibold",
+      "--gold-1",
+      "--gold-2",
+      "--gold-3",
+      "--ink-1",
+      "--ink-2",
+      "--ink-3",
+      "--lh-body",
+      "--lh-snug",
+      "--lh-tight",
+      "--line-1",
+      "--line-2",
+      "--ls-body",
+      "--ls-label",
+      "--ls-name",
+      "--ls-wide",
+      "--paper-0",
+      "--paper-1",
+      "--paper-2",
+      "--paper-3",
+      "--radius-card",
+      "--radius-md",
+      "--radius-sm",
+      "--shadow-card",
+      "--shadow-soft",
+      "--sp-1",
+      "--sp-2",
+      "--sp-3",
+      "--sp-4",
+      "--sp-5",
+      "--sp-6",
+      "--sp-7",
+      "--sp-8",
+      "--sp-9",
+      "--surface-card",
+      "--surface-raised",
+      "--text-body",
+      "--text-caption",
+      "--text-heading",
+      "--text-muted"
+    ],
+    "tokenKinds": {
+      "--paper-0": "color",
+      "--paper-1": "color",
+      "--paper-2": "color",
+      "--paper-3": "color",
+      "--gold-1": "color",
+      "--gold-2": "color",
+      "--gold-3": "color",
+      "--ink-1": "color",
+      "--ink-2": "color",
+      "--ink-3": "color",
+      "--line-1": "color",
+      "--line-2": "color",
+      "--bg-page": "color",
+      "--surface-card": "color",
+      "--surface-raised": "color",
+      "--text-heading": "font",
+      "--text-body": "font",
+      "--text-muted": "font",
+      "--text-caption": "font",
+      "--accent": "color",
+      "--accent-strong": "color",
+      "--border-hairline": "color",
+      "--border-frame": "color",
+      "--font-display": "font",
+      "--font-body": "font",
+      "--font-script": "font",
+      "--fw-light": "font",
+      "--fw-regular": "font",
+      "--fw-medium": "font",
+      "--fw-semibold": "font",
+      "--fs-name": "font",
+      "--fs-display": "font",
+      "--fs-numeral": "font",
+      "--fs-lead": "font",
+      "--fs-body": "font",
+      "--fs-label": "font",
+      "--fs-caption": "font",
+      "--lh-tight": "font",
+      "--lh-snug": "font",
+      "--lh-body": "font",
+      "--ls-name": "font",
+      "--ls-label": "font",
+      "--ls-wide": "font",
+      "--ls-body": "font",
+      "--sp-1": "spacing",
+      "--sp-2": "spacing",
+      "--sp-3": "spacing",
+      "--sp-4": "spacing",
+      "--sp-5": "spacing",
+      "--sp-6": "spacing",
+      "--sp-7": "spacing",
+      "--sp-8": "spacing",
+      "--sp-9": "spacing",
+      "--radius-sm": "radius",
+      "--radius-md": "radius",
+      "--radius-card": "radius",
+      "--frame-inset": "spacing",
+      "--frame-gap": "spacing",
+      "--shadow-card": "shadow",
+      "--shadow-soft": "shadow",
+      "--ease-soft": "other",
+      "--dur-slow": "other",
+      "--dur-med": "other"
+    },
+    "fontFamilies": [
+      "Bodoni Moda",
+      "Parisienne"
+    ]
+  }
+}
